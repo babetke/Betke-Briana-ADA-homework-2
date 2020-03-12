@@ -157,13 +157,11 @@ p1 <- ggplot(data = d, aes(
   x = height,
   y = age,)) +
   geom_point(na.rm = TRUE)
-p1
 
 p2 <- ggplot(data = d, aes(
   x = weight,
   y = age,)) +
   geom_point(na.rm = TRUE)
-p2
 
 plot_grid(p1, p2, labels = c("A", "B"), label_size = 12, nrow = 1)
 ```
