@@ -81,17 +81,17 @@ ppois(13, lambda = 18)
 dpois(0, lambda = 18)
 ```
 
-#### Step 3.
+#### Step 3. Calculate the probability that she will hear exactly 7 calls in a session.
 ```{r}
 dpois(7, lambda = 18)
 ```
 
-#### Step 4
+#### Step 4. Calculate the probability that she will hear more than 20 calls in a session.
 ```{r}
 ppois(20, lambda = 18, lower.tail = FALSE)
 ```
 
-#### Step 5
+#### Step 5. Plot the relevant Poisson mass function over the values in range 0 ≤ x ≤ 40.
 ```{r}
 # plot probability mass function 
 library(mosaic)
@@ -108,11 +108,12 @@ pmf_poisson <-
 pmf_poisson
 ```
 
-#### Step 6.
+#### Step 6. Simulate 520 results from this distribution and plot the distribution using the historam() from mosaic.
 ```{r}
 q <- rpois(520, lambda = 18)
 
 histogram(q,  xlim = c(0,40))
 ```
+The shape between the simulation and the probability mass funtion look similar. 
 
 ### Challenge 3
