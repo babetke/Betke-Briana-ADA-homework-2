@@ -116,4 +116,56 @@ histogram(q,  xlim = c(0,40))
 ```
 The shape between the simulation and the probability mass funtion look similar. 
 
-### Challenge 3
+### Challenge 3:
+#### Step 1. Read in the zombie data
+```{r}
+# get that zombie data 
+f <- "https://raw.githubusercontent.com/difiore/ADA-datasets/master/zombies.csv"
+d <- read_csv(f, col_names = TRUE)
+```
+
+#### Step 2. Calculating population mean and sd for each quatitative random variable
+```{r}
+pop_var <- function(x) {
+  sum((x - mean(x))^2) / (length(x))
+}
+
+pop_sd <- function(x) {
+  sqrt(pop_var(x))
+}
+
+results2 <- summarise(d,
+  avgH = mean(height, na.rm = TRUE),
+  avgW = mean(weight, na.rm = TRUE),
+  avgZ = mean(zombies_killed, na.rm = TRUE),
+  avgE = mean(years_of_education,na.rm = TRUE),
+  avgA = mean(age,na.rm = TRUE),
+  sdH = pop_sd(height),
+  sdW = pop_sd(weight),
+  sdZ = pop_sd(zombies_killed),
+  sdE = pop_sd(years_of_education),
+  sdA = pop_sd(age)
+)
+results2
+```
+
+#### Step 3. 
+```{r}
+# scatter plot of weight and height
+# SET UP THE NEATO GRAPHS
+p1 <- ggplot(data = d, aes(
+  x = height,
+  y = age,)) +
+  geom_point(na.rm = TRUE)
+p1
+
+p2 <- ggplot(data = d, aes(
+  x = weight,
+  y = age,)) +
+  geom_point(na.rm = TRUE)
+p2
+
+plot_grid(p1, p2, labels = c("A", "B"), label_size = 12, nrow = 1)
+```
+
+#### Step 4. 
