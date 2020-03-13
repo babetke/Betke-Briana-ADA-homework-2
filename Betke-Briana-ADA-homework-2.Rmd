@@ -361,7 +361,7 @@ for (i in 1:k) {
 head(s)
 ```
 
-### Step 8. Calculate the means and standard deviations of the samples.
+#### Step 8. Calculate the means and standard deviations of the samples.
 Starting with the means.
 ```{r}
 # Calculating means
@@ -409,7 +409,7 @@ head(sample_sdA)
 ```
 
 #### Step 9. Comparison of SEs to population.
-### Height
+##### Height
 ```{r}
 # For height
 sd(mH) # SD of means
@@ -417,7 +417,7 @@ sample_seH <- sample_sdH / sqrt(n)
 mean(sample_seH) # means of se
 (pop_se <- results2$sdH / (sqrt(n))) # se of population
 ```
-### Weight
+##### Weight
 ```{r}
 # For weight
 sd(mW)
@@ -425,7 +425,7 @@ sample_seW <- sample_sdW / sqrt(n)
 mean(sample_seW)
 (pop_se <- results2$sdW / (sqrt(n)))
 ```
-### Number of zombie kills
+##### Number of zombie kills
 ```{r}
 # For Number of kills
 sd(mK) 
@@ -433,7 +433,7 @@ sample_seK <- sample_sdK / sqrt(n)
 mean(sample_seK)
 (pop_se <- results2$sdZ / (sqrt(n)))
 ```
-### Years of education 
+##### Years of education 
 ```{r}
 # Years of education 
 sd(mE) 
@@ -441,7 +441,7 @@ sample_seE <- sample_sdE / sqrt(n)
 mean(sample_seE)
 (pop_se <- results2$sdE / (sqrt(n)))
 ```
-### Age
+##### Age
 ```{r}
 # age
 sd(mA)
